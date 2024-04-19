@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laços 2 - Prova</title>
+</head>
+<body>
+    <script>
+        let input = prompt("Digite um número inteiro positivo:");
+        let numero = parseInt(input);
+
+        if (Number.isInteger(numero) && numero > 0) {
+            let fatorial = 1;
+            for (let i = 1; i <= numero; i++) {
+                fatorial *= i;
+            }
+
+            let fibonacci = "0, 1";
+            let fib1 = 0;
+            let fib2 = 1;
+            for (let i = 2; i <= numero; i++) {
+                let proximo = fib1 + fib2;
+                fibonacci += ", " + proximo;
+                fib1 = fib2;
+                fib2 = proximo;
+            }
+
+            document.writeln("Fatorial de ", numero, ": ", fatorial + '<br>');
+            document.writeln("Sequência de Fibonacci até ", numero, ": ", fibonacci);
+        } else {
+            document.writeln("Por favor, digite um número inteiro positivo válido.");
+        }
+
+
+
+    </script>
+</body>
+</html>
